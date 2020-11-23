@@ -15,14 +15,12 @@ namespace Squares.Services.Coordinates
         public async Task<CoordinateList> CreateCoordinateList(List<Coordinate> coordinates)
         {
             CoordinateList createdCoordinateList = await _squareDbContext.CreateCoordinateList(coordinates).ConfigureAwait(false);
-
             return createdCoordinateList;
         }
 
         public async Task<CoordinateList> GetCoordinateList(int coordinateListId)
         {
             CoordinateList updatedCoordinateList = await _squareDbContext.GetCoordinateList(coordinateListId).ConfigureAwait(false);
-
             return updatedCoordinateList;
         }
 

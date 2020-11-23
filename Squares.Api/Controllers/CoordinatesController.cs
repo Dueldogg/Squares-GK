@@ -37,7 +37,6 @@ namespace Squres.Api.Controllers
             List<Squares.Models.Coordinates.Coordinate> mappedCoordinates = coordinates.Select(Mapper.Map).ToList();
             Squares.Models.Coordinates.CoordinateList createdCoordinateList = await _coordinateService.CreateCoordinateList(mappedCoordinates).ConfigureAwait(false);
             CoordinateList apiCoordinateList = Mapper.Map(createdCoordinateList);
-
             return CreatedAtRoute(RouteNames.GetCoordinateListById, new { coordinateListId = apiCoordinateList.Id }, apiCoordinateList);
         }
 
@@ -54,7 +53,6 @@ namespace Squres.Api.Controllers
         {
             Squares.Models.Coordinates.CoordinateList createdCoordinateList = await _coordinateService.GetCoordinateList(coordinateListId).ConfigureAwait(false);
             CoordinateList apiCoordinateList = Mapper.Map(createdCoordinateList);
-
             return Ok(apiCoordinateList);
         }
 
@@ -71,7 +69,6 @@ namespace Squres.Api.Controllers
         {
             Squares.Models.Coordinates.Coordinate mappedCoordinate = Mapper.Map(coordinate);
             await _coordinateService.AddCoordinateToList(coordinateListId, mappedCoordinate).ConfigureAwait(false);
-
             return Ok();
         }
 
@@ -87,7 +84,6 @@ namespace Squres.Api.Controllers
         public async Task<IActionResult> DeleteCoordinate(int coordinateListId, int coordinateId)
         {
             await _coordinateService.DeleteCoordinate(coordinateListId, coordinateId).ConfigureAwait(false);
-
             return NoContent();
         }
 
@@ -103,7 +99,6 @@ namespace Squres.Api.Controllers
         {
             List<Squares.Models.Squares.Square> squares = await _squareService.GetSquares(coordinateListId).ConfigureAwait(false);
             List<Square> apiSquares = squares.Select(Mapper.Map).ToList();
-
             return Ok(apiSquares);
         }
     }

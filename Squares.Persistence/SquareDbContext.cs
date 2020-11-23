@@ -25,7 +25,6 @@ namespace Squares.Persistence
             await SaveChangesAsync().ConfigureAwait(false);
 
             CoordinateList createdCoordinateList = DtoMapper.Map(coordinateListDto, coordinateDtos);
-
             return createdCoordinateList;
         }
 
@@ -40,8 +39,8 @@ namespace Squares.Persistence
                 .Where(x => x.CoordinateListId == coordinateListId)
                 .ToListAsync()
                 .ConfigureAwait(false);
-            CoordinateList coordinateList = DtoMapper.Map(coordinateListDto, coordinateDtos);
 
+            CoordinateList coordinateList = DtoMapper.Map(coordinateListDto, coordinateDtos);
             return coordinateList;
         }
 

@@ -16,16 +16,6 @@ namespace Squres.Api.Mapping
             };
         }
 
-        public static Squares.Models.Coordinates.Coordinate Map(Coordinate coordinate)
-        {
-            return new Squares.Models.Coordinates.Coordinate
-            {
-                Id = coordinate.Id,
-                X = coordinate.X,
-                Y = coordinate.Y
-            };
-        }
-
         public static Squares.Models.Coordinates.Coordinate Map(CoordinateCreateRequest coordinate)
         {
             return new Squares.Models.Coordinates.Coordinate
@@ -44,26 +34,9 @@ namespace Squres.Api.Mapping
             };
         }
 
-        public static Squares.Models.Coordinates.CoordinateList Map(CoordinateList coordinateList)
-        {
-            return new Squares.Models.Coordinates.CoordinateList
-            {
-                Id = coordinateList.Id,
-                Coordinates = coordinateList.Coordinates.Select(Map).ToList()
-            };
-        }
-
         public static Square Map(Squares.Models.Squares.Square square)
         {
             return new Square
-            {
-                Coordinates = square.Coordinates.Select(Map).ToList()
-            };
-        }
-
-        public static Squares.Models.Squares.Square Map(Square square)
-        {
-            return new Squares.Models.Squares.Square
             {
                 Coordinates = square.Coordinates.Select(Map).ToList()
             };

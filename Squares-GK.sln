@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30717.126
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Squares.Api", "Squres.Api\Squares.Api.csproj", "{D777992D-D05E-41D1-A21C-5E0153EBCAA7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Squares.Api", "Squares.Api\Squares.Api.csproj", "{D777992D-D05E-41D1-A21C-5E0153EBCAA7}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Squares.Services", "Squares.Services\Squares.Services.csproj", "{B1FC95DF-2C9B-4E32-9CC7-CE6CA0CB7AA2}"
 EndProject
@@ -21,6 +21,7 @@ Global
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{D777992D-D05E-41D1-A21C-5E0153EBCAA7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{D777992D-D05E-41D1-A21C-5E0153EBCAA7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D777992D-D05E-41D1-A21C-5E0153EBCAA7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D777992D-D05E-41D1-A21C-5E0153EBCAA7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D777992D-D05E-41D1-A21C-5E0153EBCAA7}.Release|Any CPU.Build.0 = Release|Any CPU
 		{B1FC95DF-2C9B-4E32-9CC7-CE6CA0CB7AA2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU

@@ -23,7 +23,6 @@ namespace Squres.Api
 
         public IConfiguration Configuration { get; }
 
-        // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
@@ -40,35 +39,26 @@ namespace Squres.Api
                 string xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
                 c.IncludeXmlComments(xmlPath);
             });
-
             services.AddDbContext<SquareDbContext>(x => x.UseInMemoryDatabase("SquaresDatabaseName"));
-
             services.AddTransient<ICoordinateService>(x => new CoordinateService(x.GetRequiredService<SquareDbContext>()));
             services.AddTransient<ISquareService>(x => new SquareService(x.GetRequiredService<SquareDbContext>()));
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
             }
-
             app.UseSwagger();
-
             app.UseSwaggerUI(c =>
             {
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "Square API V1");
                 c.RoutePrefix = string.Empty;
             });
-
             app.UseHttpsRedirection();
-
             app.UseRouting();
-
             app.UseAuthorization();
-
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();

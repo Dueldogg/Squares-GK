@@ -20,7 +20,6 @@ namespace Squares.Services.Squares
         {
             CoordinateList coordinateList = await _squareDbContext.GetCoordinateList(coordinateListId).ConfigureAwait(false);
             List<Square> squares = GetSquares(coordinateList.Coordinates);
-
             return squares;
         }
 
