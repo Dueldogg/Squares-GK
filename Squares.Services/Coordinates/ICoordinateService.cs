@@ -8,7 +8,7 @@ namespace Squares.Services.Coordinates
     {
         Task<CoordinateList> CreateCoordinateList(List<Coordinate> coordinates);
         Task<CoordinateList> GetCoordinateList(int coordinateListId);
-        Task AddCoordinateToList(int coordinateListId, Coordinate coodrinate);
+        Task CreateCoordinateInList(int coordinateListId, Coordinate coodrinate);
         Task DeleteCoordinate(int coordinateListId, int coodrinateId);
     }
 }

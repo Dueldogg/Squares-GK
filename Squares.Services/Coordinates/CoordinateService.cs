@@ -24,7 +24,7 @@ namespace Squares.Services.Coordinates
             return updatedCoordinateList;
         }
 
-        public async Task AddCoordinateToList(int coordinateListId, Coordinate coordinate)
+        public async Task CreateCoordinateInList(int coordinateListId, Coordinate coordinate)
         {
             await _squareDbContext.AddCoordinateToList(coordinateListId, coordinate).ConfigureAwait(false);
         }

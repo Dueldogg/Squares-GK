@@ -65,10 +65,10 @@ namespace Squres.Api.Controllers
         /// <response code="200">The coordinate was successfully added to the coordinate list.</response>
         [HttpPost("coordinateLists/{coordinateListId}/coordinate")]
         [ProducesResponseType((int)HttpStatusCode.OK)]
-        public async Task<IActionResult> AddCoordinate(int coordinateListId, [FromBody] CoordinateCreateRequest coordinate)
+        public async Task<IActionResult> CreateNewCoordinateInList(int coordinateListId, [FromBody] CoordinateCreateRequest coordinate)
         {
             Squares.Models.Coordinates.Coordinate mappedCoordinate = Mapper.Map(coordinate);
-            await _coordinateService.AddCoordinateToList(coordinateListId, mappedCoordinate).ConfigureAwait(false);
+            await _coordinateService.CreateCoordinateInList(coordinateListId, mappedCoordinate).ConfigureAwait(false);
             return Ok();
         }
 
