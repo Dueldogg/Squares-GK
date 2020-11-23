@@ -8,3 +8,4 @@
 * Task was completed in approximately 8 hours
 * Missing validation and error handling, so don't go hard on it :D 
 * Decided to prioritize code clarity and architecture instead of crapping more features
+* As for corner-cutting, I used EF Core InMemory Database, so it resets every time you reset the API
