@@ -13,11 +13,11 @@ using Squares.Services.Squares;
 namespace Squres.Api.Controllers
 {
     [ApiController]
-    public class CoordinatesController : ControllerBase
+    public class CoordinateListsController : ControllerBase
     {
         private readonly ICoordinateService _coordinateService;
         private readonly ISquareService _squareService;
-        public CoordinatesController(ICoordinateService coordinateService, ISquareService squareService)
+        public CoordinateListsController(ICoordinateService coordinateService, ISquareService squareService)
         {
             _coordinateService = coordinateService;
             _squareService = squareService;
@@ -64,7 +64,7 @@ namespace Squres.Api.Controllers
         /// <returns>The updated coordinate list.</returns>
         /// <response code="200">The coordinate was successfully added to the coordinate list.</response>
         [HttpPost("coordinateLists/{coordinateListId}/coordinate")]
-        [ProducesResponseType(typeof(CoordinateList), (int)HttpStatusCode.OK)]
+        [ProducesResponseType((int)HttpStatusCode.OK)]
         public async Task<IActionResult> AddCoordinate(int coordinateListId, [FromBody] CoordinateCreateRequest coordinate)
         {
             Squares.Models.Coordinates.Coordinate mappedCoordinate = Mapper.Map(coordinate);
@@ -80,7 +80,7 @@ namespace Squres.Api.Controllers
         /// <response code="204">The coordinate was successfully deleted.</response>
         /// <response code="404">The coordinate does not exist.</response>
         [HttpDelete("coordinateLists/{coordinateListId}/coordinates/{coordinateId}")]
-        [ProducesResponseType(typeof(Coordinate), (int)HttpStatusCode.OK)]
+        [ProducesResponseType((int)HttpStatusCode.NoContent)]
         public async Task<IActionResult> DeleteCoordinate(int coordinateListId, int coordinateId)
         {
             await _coordinateService.DeleteCoordinate(coordinateListId, coordinateId).ConfigureAwait(false);
