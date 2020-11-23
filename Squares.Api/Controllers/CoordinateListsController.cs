@@ -57,12 +57,12 @@ namespace Squres.Api.Controllers
         }
 
         /// <summary>
-        /// Add a new coordinate in a coordinate list.
+        /// Create a new coordinate in a coordinate list.
         /// </summary>
         /// <param name="coordinateListId">Coordinate list unique identifier.</param>
         /// <param name="coordinate">Requried information to create a new coordinate.</param>
         /// <returns>The updated coordinate list.</returns>
-        /// <response code="200">The coordinate was successfully added to the coordinate list.</response>
+        /// <response code="200">The coordinate was successfully created in the coordinate list.</response>
         [HttpPost("coordinateLists/{coordinateListId}/coordinate")]
         [ProducesResponseType((int)HttpStatusCode.OK)]
         public async Task<IActionResult> CreateNewCoordinateInList(int coordinateListId, [FromBody] CoordinateCreateRequest coordinate)
